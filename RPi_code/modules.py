@@ -1,8 +1,8 @@
 import subprocess
 import transmissionrpc
 
-TRANSMISSION_USER = 'pi'
-TRANSMISSION_PASSWORD = 'betaf123'
+TRANSMISSION_USER = 'USERNAME'
+TRANSMISSION_PASSWORD = 'PASSWORD'
 
 class Temperature:
     def get(self, params):
