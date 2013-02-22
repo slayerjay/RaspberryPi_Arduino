@@ -7,8 +7,12 @@ A project to show status messages from Raspberry Pi on an LCD connected to an Ar
 Dependancies
 ============
 Python: 
-    SerialPy: http://pyserial.sourceforge.net/
-    TransmionRPC:  https://pypi.python.org/pypi/transmissionrpc/
+-------
+- SerialPy: <http://pyserial.sourceforge.net/>
+- TransmionRPC:  <https://pypi.python.org/pypi/transmissionrpc/>
 
 Arduino:
-    Bounce.h: http://playground.arduino.cc/code/bounce
+--------
+- Bounce.h: http://playground.arduino.cc/code/bounce
+
+More Info and Pictures: <http://cyberasylum.janithw.com/raspberry-pi-and-arduino-lcd/>
