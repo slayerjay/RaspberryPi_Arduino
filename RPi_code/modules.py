@@ -23,3 +23,6 @@ class Torrents:
         for torrent in torrents:
             result.append(self.getTorrent(torrent))
         return result
+        
+    def get_objects(self):
+        return self.client.get_torrents()

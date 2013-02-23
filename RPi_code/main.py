@@ -5,7 +5,7 @@ from handlers import TorrentHandler
 
 class SerialStats:
     def __init__(self):
-        self.serial = serial.Serial('/dev/ttyACM0', 9600, timeout = 3)
+        self.serial = serial.Serial('/dev/ttyACM0', 9600, timeout = 2)
         time.sleep(2)    #wait for the Serial to initialize
         self.serial.write('Starting...')
         self.modules = [TempHandler(), TorrentHandler()]
@@ -13,12 +13,13 @@ class SerialStats:
     def run(self):
         curr = 0
         while True:
-            c = self.serial.read(1)
-            if( c == '1'):	# '1' is to scroll through the list
+            c = self.serial.readline().strip()
+            if( c == '1'):    # '1' is to scroll through the list
                 curr += 1
                 if(curr >= len(self.modules)):
                     curr=0
-            elif (c == '2'):	# '3' is to enter in to a list item
+                self.serial.write('Please wait...')
+            elif (c == '11'):    # '3' is to enter in to a list item
                 self.modules[curr].handle(self.serial)
             
             self.serial.write(self.modules[curr].get_stat())
